@@ -7,5 +7,6 @@ your_project/
 └── templates/
     ├── index.html
     └── result.html
+    
 
     
