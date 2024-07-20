@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask, request, render_template
 import joblib
 
@@ -15,13 +14,8 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     text = request.form['text']
-    
-    # Vectorize the input text
     X = vectorizer.transform([text])
-    
-    # Predict the sentiment
     prediction = model.predict(X)
-    
     return render_template('result.html', sentiment=prediction[0])
 
 if __name__ == '__main__':
